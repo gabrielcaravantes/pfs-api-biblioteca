@@ -1,10 +1,12 @@
 import bookModel from "../models/bookModel.js";
 
+//obtém todos os livros usando a função getBooks do modelo de livro
 async function getBooks(req, res) {
     const users = await bookModel.getBooks();
     return res.status(200).send(users);
 }
 
+//busca um livro pelo ID usando a função findBook do modelo de livro
 async function findBook(req, res) {
     const { id } = req.params;
 
@@ -16,6 +18,7 @@ async function findBook(req, res) {
     return res.sendStatus(404);
 }
 
+//cria um novo livro usando a função createBook do modelo de livro
 async function createBook(req, res) {
     const { _id } = req.jwt;
     const { title, content } = req.body;
@@ -24,6 +27,7 @@ async function createBook(req, res) {
     return res.status(200).send(book);
 }
 
+//atualiza um livro pelo ID usando a função updateBook do modelo de livro
 async function updateBook(req, res) {
     const { id } = req.params;
 
@@ -35,6 +39,7 @@ async function updateBook(req, res) {
     return res.sendStatus(404);
 }
 
+//deleta um livro pelo ID usando a função deleteBook do modelo de livro
 async function deleteBook(req, res) {
     const { id } = req.params;
 

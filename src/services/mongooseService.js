@@ -21,7 +21,6 @@ function connectWithRetry() {
         });
 }
 
-
 connectWithRetry();
 
 export default mongoose;
