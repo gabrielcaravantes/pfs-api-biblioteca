@@ -1,5 +1,6 @@
-//é responsável por estabelecer a conexão com o banco de dados MongoDB usando a biblioteca mongoose
+//estabelecimento da conexão do MongoDB usando a biblioteca mongoose
 import mongoose from "mongoose";
+
 //para controlar a quantidade de tentativas de conexão com o banco de dados
 let count = 0;
 
